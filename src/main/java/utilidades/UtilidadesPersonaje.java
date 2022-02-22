@@ -71,11 +71,24 @@ public class UtilidadesPersonaje {
 
 
 
-    public Map<Region, Personaje> getMasPoderosoPorRegion(List<Personaje> personajes){
+    public static Map<Region, Personaje> getMasPoderosoPorRegion(List<Personaje> personajes){
 
         Map<Region, List<Personaje>> miMapa1 = getPersonajesPorRegion(personajes);
 
-        List<Personaje> p1 = miMapa1.values().forEach(p -> getMasPoderoso(p));
+       //miMapa1.values().forEach(v-> getMasPoderoso(v));
+
+
+        Map<Region, Personaje> miPrueba = new HashMap<>();
+
+        for (Map.Entry<Region, List<Personaje>> entry : miMapa1.entrySet()){
+            Personaje p1 = getMasPoderoso(entry.getValue());
+
+            miPrueba.put(entry.getKey(),p1);
+            p1 = null;
+        }
+
+
+       return miPrueba;
 
         }
 
