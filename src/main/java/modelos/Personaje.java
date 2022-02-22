@@ -21,9 +21,9 @@ public class Personaje {
     private double vida;
     private double mana;
     private Region region;
-    private List<modelos.Habilidad> habilidades;
-    private List<modelos.Item> equipamiento;
-    private modelos.Escalabilidad escalabilidad;
+    private List<Habilidad> habilidades;
+    private List<Item> equipamiento;
+    private Escalabilidad escalabilidad;
 
 
     public Personaje() {
@@ -32,8 +32,8 @@ public class Personaje {
 
     public Personaje(String nombre, String descripcion, LocalDate fechaCreacion, int nivel, double vidaBase,
                      double manaBase, double defensaBase, double defensa, double ataqueBase, double ataque,
-                     double vida, double mana, Region region, List<modelos.Habilidad> habilidades, List<modelos.Item> equipamiento,
-                     modelos.Escalabilidad escalabilidad) {
+                     double vida, double mana, Region region, List<Habilidad> habilidades, List<Item> equipamiento,
+                     Escalabilidad escalabilidad) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.fechaCreacion = fechaCreacion;
