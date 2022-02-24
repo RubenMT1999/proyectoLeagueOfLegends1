@@ -1,12 +1,14 @@
-package modelos;
-
+import modelos.Escalabilidad;
+import modelos.Personaje;
+import modelos.Region;
 import utilidades.UtilidadesPersonaje;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Probando {
+public class Prueba {
+
 
     public static void main(String[] args) {
 
@@ -17,7 +19,7 @@ public class Probando {
 
         Personaje p1 = new Personaje("Amumu","Enano cabezon", LocalDate.of(2010,9,20),16,
                 500.00,425.00,60.00,200.00,56.00,120.00,
-                3234.00,1209.00,Region.FREIJORD,null,null,e1);
+                3234.00,1209.00, Region.FREIJORD,null,null,e1);
 
         Personaje p2 = new Personaje("Dr.Mundo","Ciclado", LocalDate.of(2010,9,20),16,
                 800.00,325.00,70.00,200.00,56.00,120.00,
