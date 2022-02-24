@@ -2,6 +2,7 @@ package utilidades;
 
 import modelos.*;
 
+import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -10,22 +11,24 @@ public class UtilidadesPersonaje {
 
     public static Personaje levelUp(Personaje personaje){
 
-        int nivelPrueba = personaje.getNivel();
-        personaje.setNivel(nivelPrueba+1);
 
-        int nivelNuevo = personaje.getNivel() +1;
+        if (personaje.getNivel() <18 && personaje.getNivel() >0){
+            int nivelPrueba = personaje.getNivel();
+            personaje.setNivel(nivelPrueba+1);
 
-        personaje.setAtaque(personaje.getAtaqueBase() + personaje.getEscalabilidad().getIncrementoDanioNivel()
-                                * nivelNuevo);
-        personaje.setDefensa(personaje.getDefensaBase() + personaje.getEscalabilidad().getIncrementoDefensaNivel()
-                                * nivelNuevo);
-        personaje.setVida(personaje.getVidaBase() + personaje.getEscalabilidad().getIncrementoSaludNivel()
-                                * nivelNuevo);
-        personaje.setMana(personaje.getManaBase() + personaje.getEscalabilidad().getIncrementoManaNivel()
-                                * nivelNuevo);
+            int nivelNuevo = personaje.getNivel() +1;
 
-        return personaje;
+            personaje.setAtaque(personaje.getAtaqueBase() + personaje.getEscalabilidad().getIncrementoDanioNivel()
+                                    * nivelNuevo);
+            personaje.setDefensa(personaje.getDefensaBase() + personaje.getEscalabilidad().getIncrementoDefensaNivel()
+                                    * nivelNuevo);
+            personaje.setVida(personaje.getVidaBase() + personaje.getEscalabilidad().getIncrementoSaludNivel()
+                                    * nivelNuevo);
+            personaje.setMana(personaje.getManaBase() + personaje.getEscalabilidad().getIncrementoManaNivel()
+                                    * nivelNuevo);
 
+            return personaje;
+        }
     }
 
     public static Personaje levelDown(Personaje personaje){
