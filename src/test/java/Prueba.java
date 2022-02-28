@@ -1,3 +1,4 @@
+import ficheros.UtilidadesFicheros;
 import modelos.Escalabilidad;
 import modelos.Personaje;
 import modelos.Region;
@@ -40,6 +41,14 @@ public class Prueba {
         miLista1.add(p4);
 
 
-        System.out.println(UtilidadesPersonaje.getMasPoderoso(miLista1));
+        //System.out.println(UtilidadesPersonaje.getMasPoderoso(miLista1));
+
+        try {
+            System.out.println(UtilidadesFicheros.LeerFicheroPersonajes());
+        }catch (Exception e ){
+            System.out.println("error");
+        }
+
+
     }
 }

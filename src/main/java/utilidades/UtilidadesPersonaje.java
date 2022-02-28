@@ -29,6 +29,7 @@ public class UtilidadesPersonaje {
 
             return personaje;
         }
+        return personaje;
     }
 
     public static Personaje levelDown(Personaje personaje){
