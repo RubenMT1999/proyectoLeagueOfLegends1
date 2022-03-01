@@ -1,10 +1,7 @@
 package ficheros;
 
 import com.opencsv.CSVReader;
-import modelos.Habilidad;
-import modelos.Personaje;
-import modelos.Region;
-import modelos.TipoHabilidad;
+import modelos.*;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -136,5 +133,43 @@ public class UtilidadesFicheros {
     return listaPersonajes;
 
     }
+
+
+    public static List<Item> leerItems() throws IOException{
+
+        List<Item> listaItem = new ArrayList<>();
+        CSVReader miReader = null;
+
+        try{
+            miReader = new CSVReader(new FileReader("C:\\Users\\daw20\\Desktop\\proyectoLeagueOfLegends1\\src\\main\\java\\archivos\\items.csv.csv"),SEPARATOR,QUOTE);
+            String [] linea = null;
+            int contador = 0;
+
+            while ((linea = miReader.readNext()) != null){
+                if (contador >0){
+                    String [] valores = linea;
+                    Item miItem = new Item();
+                    miItem.setId(Integer.parseInt(valores[0]));
+                    miItem.setNombre(valores[1]);
+                    miItem.setAumentoDanio(Double.parseDouble(valores[2]));
+                    miItem.setAumentoDefensa(Double.parseDouble(valores[3]));
+                    miItem.setAumentoSalud(Double.parseDouble(valores[4]));
+                    miItem.setAumentoMana(Double.parseDouble(valores[5]));
+                    listaItem.add(miItem);
+                }
+                contador++;
+            }
+        }catch (Exception e){
+            throw e;
+        }
+        return listaItem;
+    }
+
+
+    public static void equiparItem(Personaje personaje, Item item){
+
+    }
+
+
 
 }

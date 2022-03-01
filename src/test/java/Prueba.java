@@ -52,12 +52,10 @@ public class Prueba {
         */
 
         try {
-            System.out.println(UtilidadesFicheros.leerYAprenderHabilidades());
+            System.out.println(UtilidadesFicheros.leerItems());
         }catch (Exception e ){
             System.out.println("error");
         }
-
-
 
 
     }
