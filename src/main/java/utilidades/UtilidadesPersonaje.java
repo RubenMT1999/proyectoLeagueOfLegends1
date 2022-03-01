@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class UtilidadesPersonaje {
 
 
-    public static Personaje levelUp(Personaje personaje){
+    public static void levelUp(Personaje personaje){
 
 
         if (personaje.getNivel() <18 && personaje.getNivel() >0){
@@ -27,9 +27,9 @@ public class UtilidadesPersonaje {
             personaje.setMana(personaje.getManaBase() + personaje.getEscalabilidad().getIncrementoManaNivel()
                                     * nivelNuevo);
 
-            return personaje;
+
         }
-        return personaje;
+
     }
 
     public static Personaje levelDown(Personaje personaje){

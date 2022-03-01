@@ -43,11 +43,21 @@ public class Prueba {
 
         //System.out.println(UtilidadesPersonaje.getMasPoderoso(miLista1));
 
-        try {
-            System.out.println(UtilidadesFicheros.LeerFicheroPersonajes());
+        /*
+       try {
+            System.out.println(UtilidadesFicheros.leerFicheroPersonajes());
         }catch (Exception e ){
             System.out.println("error");
         }
+        */
+
+        try {
+            System.out.println(UtilidadesFicheros.leerYAprenderHabilidades());
+        }catch (Exception e ){
+            System.out.println("error");
+        }
+
+
 
 
     }

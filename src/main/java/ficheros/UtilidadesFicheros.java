@@ -1,8 +1,10 @@
 package ficheros;
 
 import com.opencsv.CSVReader;
+import modelos.Habilidad;
 import modelos.Personaje;
 import modelos.Region;
+import modelos.TipoHabilidad;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,13 +24,13 @@ public class UtilidadesFicheros {
     }
 
 
-    public static List<Personaje> LeerFicheroPersonajes() throws IOException{
+    public static List<Personaje> leerFicheroPersonajes() throws IOException{
 
         List<Personaje> miLista = new ArrayList<>();
         CSVReader reader = null;
 
         try {
-            reader= new CSVReader(new FileReader("C:\\Users\\NitroPC\\IdeaProjects\\proyectoLeagueOfLegends1\\src\\main\\java\\ficheros\\personajes.csv"),SEPARATOR,QUOTE);
+            reader= new CSVReader(new FileReader("C:\\Users\\daw20\\Desktop\\proyectoLeagueOfLegends1\\src\\main\\java\\archivos\\personajes.csv"),SEPARATOR,QUOTE);
             String[] nextLine = null;
             int count = 0;
 
@@ -37,6 +39,7 @@ public class UtilidadesFicheros {
                 if (count >0){
                     String[] valores = nextLine;
                     Personaje p1 = new Personaje();
+                    p1.setId(Integer.parseInt(valores[0]));
                     p1.setNombre(valores[1]);
                     p1.setFechaCreacion(LocalDate.parse(valores[2], DateTimeFormatter.ofPattern("dd/MM/yyyy")));
                     p1.setAtaqueBase(Double.parseDouble(valores[3]));
@@ -44,6 +47,7 @@ public class UtilidadesFicheros {
                     p1.setVidaBase(Double.parseDouble(valores[5]));
                     p1.setManaBase(Double.parseDouble(valores[6]));
                     p1.setRegion(Region.valueOf(valores[7]));
+                    p1.setNivel(1);
                     miLista.add(p1);
                 }
                 count++;
@@ -57,4 +61,80 @@ public class UtilidadesFicheros {
 
         return miLista;
     }
+
+
+    public static List<Personaje> leerYAprenderHabilidades() throws IOException{
+        List<Personaje> listaPersonajes = new ArrayList<>();
+
+        try{
+            listaPersonajes = leerFicheroPersonajes();
+        }catch (Exception e){
+            throw e;
+        }
+
+
+
+        List<Habilidad> listaHabilidades = new ArrayList<>();
+        CSVReader miReaderHabilidades = null;
+
+        try{
+            miReaderHabilidades = new CSVReader(new FileReader("C:\\Users\\daw20\\Desktop\\proyectoLeagueOfLegends1\\src\\main\\java\\archivos\\habilidades.csv"),
+                    SEPARATOR,QUOTE);
+
+            String[] siguienteLinea = null;
+            int contador = 0;
+
+            while ((siguienteLinea = miReaderHabilidades.readNext()) != null){
+
+                if (contador > 0){
+
+
+                String[] valores = siguienteLinea;
+                Habilidad miHabilidad1 = new Habilidad();
+                miHabilidad1.setId(Integer.parseInt(valores[0]));
+                miHabilidad1.setNombre(valores[2]);
+                miHabilidad1.setDanioBase(Double.parseDouble(valores[3]));
+                miHabilidad1.setCosteMana(Double.parseDouble(valores[4]));
+                miHabilidad1.setTipoHabilidad(TipoHabilidad.valueOf(valores[5]));
+                listaHabilidades.add(miHabilidad1);
+
+                List<Habilidad> nuevaListaHabilidades = new ArrayList<>();
+                nuevaListaHabilidades.add(miHabilidad1);
+
+
+                for (Personaje p : listaPersonajes){
+                    if (Integer.parseInt(valores[1]) == p.getId()){
+                        if (p.getHabilidades() != null){
+                            List<Habilidad> hP = new ArrayList<>();
+
+                            for (Habilidad h : p.getHabilidades()){
+                                hP.add(h);
+                            }
+                            hP.add(miHabilidad1);
+                            p.setHabilidades(hP);
+
+
+                        }else {
+                            p.setHabilidades(nuevaListaHabilidades);
+                        }
+                    }
+                }
+
+                nuevaListaHabilidades = null;
+            }
+                contador++;
+            }
+
+
+        }catch (Exception e){
+            throw e;
+        }
+
+
+
+
+    return listaPersonajes;
+
+    }
+
 }
