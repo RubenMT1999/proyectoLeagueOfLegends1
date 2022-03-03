@@ -135,6 +135,8 @@ public class UtilidadesFicheros {
     }
 
 
+
+
     public static List<Item> leerItems() throws IOException{
 
         List<Item> listaItem = new ArrayList<>();
@@ -166,9 +168,12 @@ public class UtilidadesFicheros {
     }
 
 
-    public static void equiparItem(Personaje personaje, Item item){
 
-    }
+
+
+
+
+
 
 
 
