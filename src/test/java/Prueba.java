@@ -1,12 +1,13 @@
 import ficheros.UtilidadesFicheros;
-import modelos.Escalabilidad;
-import modelos.Personaje;
-import modelos.Region;
+import modelos.*;
+import utilidades.UtilidadesPartida;
 import utilidades.UtilidadesPersonaje;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Prueba {
 
@@ -40,6 +41,28 @@ public class Prueba {
         miLista1.add(p3);
         miLista1.add(p4);
 
+        Partida partida1 = new Partida("JOPW90",32.543, null,
+                null,null,null,0,null);
+
+
+        Set<Personaje> miSetFavoritos1 = new HashSet<>();
+        miSetFavoritos1.add(p1);
+        miSetFavoritos1.add(p2);
+
+        Set<Personaje> miSetFavoritos2 = new HashSet<>();
+        miSetFavoritos2.add(p2);
+        miSetFavoritos2.add(p3);
+
+        Jugador j1 = new Jugador("patg01",miSetFavoritos1,null);
+        Jugador j2 = new Jugador("contor",miSetFavoritos1,null);
+        Jugador j3 = new Jugador("davidp",miSetFavoritos2,null);
+        Jugador j4 = new Jugador("xpeke",miSetFavoritos2,null);
+
+        List<Jugador> listaJugadores = new ArrayList<>();
+        listaJugadores.add(j1);
+        listaJugadores.add(j2);
+        listaJugadores.add(j3);
+        listaJugadores.add(j4);
 
         //System.out.println(UtilidadesPersonaje.getMasPoderoso(miLista1));
 
@@ -51,11 +74,8 @@ public class Prueba {
         }
         */
 
-        try {
-            System.out.println(UtilidadesFicheros.leerItems());
-        }catch (Exception e ){
-            System.out.println("error");
-        }
+       UtilidadesPartida uP1 = new UtilidadesPartida();
+       uP1.inicializarPartida(partida1,listaJugadores,miLista1);
 
 
     }
