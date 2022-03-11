@@ -43,23 +43,23 @@ public class UtilidadesPartida implements IUtilidadesPartida{
 
         //FORMAR EQUIPOS. COJEMOS DOS SETS Y VAMOS INSERTANDO EN AMBOS LOS PARTICIPANTES
 
-        Map<Integer, Set<Jugador>> formarEquipo = partida.getJugadoresPorEquipo();
+        Map<Integer, Set<Jugador>> formarEquipo = new HashMap<>();
 
         Set<Jugador> equipo1 = new HashSet<>();
         Set<Jugador> equipo2 = new HashSet<>();
 
-        List<Jugador> listaEquipos = participantes;
 
-        if (listaEquipos.size()%2 == 0){
+        int comprobarPares = participantes.size();
+
+        if (comprobarPares%2 == 0){
             for (Jugador j : participantes){
 
                 if (equipo1.size() == equipo2.size()){
                     equipo1.add(j);
-                    listaEquipos.remove(j);
                 }
                 else {
                     equipo2.add(j);
-                    listaEquipos.add(j);
+
                 }
             }
 
@@ -75,6 +75,17 @@ public class UtilidadesPartida implements IUtilidadesPartida{
 
     @Override
     public void finalizarPartida(Partida partida, Integer equipoVencedor) {
+
+        partida.setFinPartida(LocalDateTime.now());
+        int segundosInicio = partida.getInicioPartida().getSecond();
+        int segundosFin = partida.getFinPartida().getSecond();
+        int duracionPartida = segundosFin - segundosInicio;
+        partida.setDuracionPartida(duracionPartida);
+
+        partida.setEquipoVencedor(equipoVencedor);
+
+
+
 
     }
 }

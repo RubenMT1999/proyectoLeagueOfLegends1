@@ -4,6 +4,7 @@ import utilidades.UtilidadesPartida;
 import utilidades.UtilidadesPersonaje;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -76,6 +77,12 @@ public class Prueba {
 
        UtilidadesPartida uP1 = new UtilidadesPartida();
        uP1.inicializarPartida(partida1,listaJugadores,miLista1);
+       uP1.finalizarPartida(partida1,1);
+       System.out.println(partida1.getDuracionPartida());
+        System.out.println(partida1.getInicioPartida());
+        System.out.println(partida1.getFinPartida());
+
+
 
 
     }
