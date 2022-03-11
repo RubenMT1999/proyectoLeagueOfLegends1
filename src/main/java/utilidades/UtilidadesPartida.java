@@ -85,7 +85,9 @@ public class UtilidadesPartida implements IUtilidadesPartida{
         partida.setEquipoVencedor(equipoVencedor);
 
 
-
+       for (Jugador e : partida.getJugadoresPorEquipo().get(equipoVencedor)){
+            e.setPartidasGanadas(partida.getElecciones().get(e), equipoVencedor);
+        }
 
     }
 }

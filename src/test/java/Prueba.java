@@ -77,10 +77,12 @@ public class Prueba {
 
        UtilidadesPartida uP1 = new UtilidadesPartida();
        uP1.inicializarPartida(partida1,listaJugadores,miLista1);
-       uP1.finalizarPartida(partida1,1);
-       System.out.println(partida1.getDuracionPartida());
+       //uP1.finalizarPartida(partida1,1);
+      // System.out.println(partida1.getDuracionPartida());
         System.out.println(partida1.getInicioPartida());
-        System.out.println(partida1.getFinPartida());
+        //System.out.println(partida1.getFinPartida());
+        System.out.println(partida1.getElecciones().get(j1));
+        System.out.println(partida1.getJugadoresPorEquipo().get(1));
 
 
 
