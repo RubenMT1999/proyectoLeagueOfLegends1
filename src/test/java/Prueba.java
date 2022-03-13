@@ -5,10 +5,7 @@ import utilidades.UtilidadesPersonaje;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Prueba {
 
@@ -42,7 +39,12 @@ public class Prueba {
         miLista1.add(p3);
         miLista1.add(p4);
 
+
+
         Partida partida1 = new Partida("JOPW90",32.543, null,
+                null,null,null,0,null);
+
+        Partida partida2 = new Partida("IFGI892",32.543, null,
                 null,null,null,0,null);
 
 
@@ -54,10 +56,15 @@ public class Prueba {
         miSetFavoritos2.add(p2);
         miSetFavoritos2.add(p3);
 
+        Map<Personaje,Integer> ganadasJ3 = new HashMap<>();
+        ganadasJ3.put(p3, 2);
+
         Jugador j1 = new Jugador("patg01",miSetFavoritos1,null);
         Jugador j2 = new Jugador("contor",miSetFavoritos1,null);
-        Jugador j3 = new Jugador("davidp",miSetFavoritos2,null);
+        Jugador j3 = new Jugador("davidp",miSetFavoritos2,ganadasJ3);
         Jugador j4 = new Jugador("xpeke",miSetFavoritos2,null);
+
+
 
         List<Jugador> listaJugadores = new ArrayList<>();
         listaJugadores.add(j1);
@@ -76,13 +83,34 @@ public class Prueba {
         */
 
        UtilidadesPartida uP1 = new UtilidadesPartida();
-       uP1.inicializarPartida(partida1,listaJugadores,miLista1);
+      // uP1.inicializarPartida(partida1,listaJugadores,miLista1);
        //uP1.finalizarPartida(partida1,1);
       // System.out.println(partida1.getDuracionPartida());
-        System.out.println(partida1.getInicioPartida());
+        //System.out.println(partida1.getInicioPartida());
         //System.out.println(partida1.getFinPartida());
-        System.out.println(partida1.getElecciones().get(j1));
-        System.out.println(partida1.getJugadoresPorEquipo().get(1));
+        //System.out.println(partida1.getElecciones().get(j1));
+        //System.out.println(partida1.getJugadoresPorEquipo().get(1));
+
+       // uP1.finalizarPartida(partida1,1);
+       // System.out.println(j3.getPartidasGanadas());
+
+        List<Personaje> miLista2 = new ArrayList<>();
+        miLista2.add(p1);
+        miLista2.add(p2);
+        miLista2.add(p3);
+        miLista2.add(p4);
+
+
+        //uP1.inicializarPartida(partida2,listaJugadores,miLista2);
+       // uP1.finalizarPartida(partida2,1);
+        //System.out.println(j3.getPartidasGanadas());
+        try{
+            System.out.println(UtilidadesFicheros.leerYAprenderHabilidades());
+        }catch (Exception e){
+            System.out.println("error");
+        }
+
+
 
 
 

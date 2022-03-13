@@ -80,14 +80,27 @@ public class UtilidadesPartida implements IUtilidadesPartida{
         int segundosInicio = partida.getInicioPartida().getSecond();
         int segundosFin = partida.getFinPartida().getSecond();
         int duracionPartida = segundosFin - segundosInicio;
+
         partida.setDuracionPartida(duracionPartida);
 
         partida.setEquipoVencedor(equipoVencedor);
 
 
-       for (Jugador e : partida.getJugadoresPorEquipo().get(equipoVencedor)){
-            e.setPartidasGanadas(partida.getElecciones().get(e), equipoVencedor);
+
+//EXCEPCION NULLPOINTER POR TENER JUGADORES CON PARTIDAS GANADAS EN NULL
+        try{
+            for (Jugador e : partida.getJugadoresPorEquipo().get(equipoVencedor)){
+
+                Personaje personajeElegido = partida.getElecciones().get(e);
+
+                Integer i = e.getPartidasGanadas().get(personajeElegido);
+
+                e.getPartidasGanadas().put(partida.getElecciones().get(e), i+1);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
 
     }
 }

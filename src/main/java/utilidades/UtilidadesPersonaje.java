@@ -34,7 +34,7 @@ public class UtilidadesPersonaje {
 
     public static void levelDown(Personaje personaje){
 
-        while (personaje.getNivel() >0){
+        if (personaje.getNivel() >0){
             int nivelPrueba = personaje.getNivel();
             personaje.setNivel(nivelPrueba-1);
 
