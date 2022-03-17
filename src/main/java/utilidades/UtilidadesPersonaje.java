@@ -12,18 +12,18 @@ public class UtilidadesPersonaje {
     public static void levelUp(Personaje personaje){
 
 
-        if (personaje.getNivel() <18 && personaje.getNivel() >0){
+        if (personaje.getNivel() <18 && personaje.getNivel() >=0){
             int nivelPrueba = personaje.getNivel();
             personaje.setNivel(nivelPrueba+1);
 
-            int nivelNuevo = personaje.getNivel() +1;
+            int nivelNuevo = personaje.getNivel() ;
 
-            personaje.setAtaque(personaje.getAtaqueBase() + personaje.getEscalabilidad().getIncrementoDanioNivel()
-                                    * nivelNuevo);
-            personaje.setDefensa(personaje.getDefensaBase() + personaje.getEscalabilidad().getIncrementoDefensaNivel()
-                                    * nivelNuevo);
-            personaje.setVida(personaje.getVidaBase() + personaje.getEscalabilidad().getIncrementoSaludNivel()
-                                    * nivelNuevo);
+            personaje.setAtaque(personaje.getAtaqueBase() + (personaje.getEscalabilidad().getIncrementoDanioNivel()
+                                    * nivelNuevo));
+            personaje.setDefensa(personaje.getDefensaBase() + (personaje.getEscalabilidad().getIncrementoDefensaNivel()
+                                    * nivelNuevo));
+            personaje.setVida(personaje.getVidaBase() + (personaje.getEscalabilidad().getIncrementoSaludNivel()
+                                    * nivelNuevo));
             personaje.setMana(personaje.getManaBase() + personaje.getEscalabilidad().getIncrementoManaNivel()
                                     * nivelNuevo);
 

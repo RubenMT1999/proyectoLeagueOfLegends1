@@ -17,11 +17,11 @@ public class Jugador {
         this.id = ++idSiguiente;
     }
 
-    public Jugador(String nickname, Set<Personaje> personajesFavoritos, Map<Personaje, Integer> partidasGanadas) {
+    public Jugador(int id, String nickname, Set<Personaje> personajesFavoritos, Map<Personaje, Integer> partidasGanadas) {
         this.nickname = nickname;
         this.personajesFavoritos = personajesFavoritos;
         this.partidasGanadas = partidasGanadas;
-        this.id = ++idSiguiente;
+        this.id = id;
     }
 
     public Jugador(Jugador jugador){

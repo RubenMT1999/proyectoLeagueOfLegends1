@@ -12,7 +12,7 @@ public class Prueba {
 
     public static void main(String[] args) {
 
-        Escalabilidad e1 = new Escalabilidad(4.5,6.00,54.00,70.00);
+      /*  Escalabilidad e1 = new Escalabilidad(4.5,6.00,54.00,70.00);
         Escalabilidad e2 = new Escalabilidad(6.00,10.00,80.00,30.00);
         Escalabilidad e3 = new Escalabilidad(8.00,4.00,51.00,70.00);
         Escalabilidad e4 = new Escalabilidad(4.8,6.00,40.00,90.00);
@@ -93,22 +93,27 @@ public class Prueba {
 
        // uP1.finalizarPartida(partida1,1);
        // System.out.println(j3.getPartidasGanadas());
-
+/*
         List<Personaje> miLista2 = new ArrayList<>();
         miLista2.add(p1);
         miLista2.add(p2);
         miLista2.add(p3);
         miLista2.add(p4);
 
-
-        //uP1.inicializarPartida(partida2,listaJugadores,miLista2);
-       // uP1.finalizarPartida(partida2,1);
-        //System.out.println(j3.getPartidasGanadas());
         try{
-            System.out.println(UtilidadesFicheros.leerYAprenderHabilidades());
+            System.out.println(UtilidadesFicheros.leerFicheroPersonajes());
         }catch (Exception e){
-            System.out.println("error");
+            System.out.println("Error");
         }
+
+/*
+        uP1.inicializarPartida(partida2,listaJugadores,miLista2);
+        uP1.finalizarPartida(partida2,1);
+        System.out.println(j3.getPartidasGanadas());
+        uP1.inicializarPartida(partida2,listaJugadores,miLista2);
+        uP1.finalizarPartida(partida2,1);
+        System.out.println(j3.getPartidasGanadas());
+*/
 
 
 

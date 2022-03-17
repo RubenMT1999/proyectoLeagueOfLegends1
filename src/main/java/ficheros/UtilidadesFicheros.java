@@ -27,7 +27,7 @@ public class UtilidadesFicheros {
         CSVReader reader = null;
 
         try {
-            reader= new CSVReader(new FileReader("C:\\Users\\NitroPC\\IdeaProjects\\proyectoLeagueOfLegends1\\src\\main\\java\\archivos\\personajes.csv"),SEPARATOR,QUOTE);
+            reader= new CSVReader(new FileReader("C:\\Users\\daw20\\Desktop\\proyectoLeagueOfLegends1\\src\\main\\java\\archivos\\personajes.csv"),SEPARATOR,QUOTE);
             String[] nextLine = null;
             int count = 0;
 
@@ -75,7 +75,7 @@ public class UtilidadesFicheros {
         CSVReader miReaderHabilidades = null;
 
         try{
-            miReaderHabilidades = new CSVReader(new FileReader("C:\\Users\\NitroPC\\IdeaProjects\\proyectoLeagueOfLegends1\\src\\main\\java\\archivos\\habilidades.csv"),
+            miReaderHabilidades = new CSVReader(new FileReader("C:\\Users\\daw20\\Desktop\\proyectoLeagueOfLegends1\\src\\main\\java\\archivos\\habilidades.csv"),
                     SEPARATOR,QUOTE);
 
             String[] siguienteLinea = null;
@@ -143,7 +143,7 @@ public class UtilidadesFicheros {
         CSVReader miReader = null;
 
         try{
-            miReader = new CSVReader(new FileReader("C:\\Users\\NitroPC\\IdeaProjects\\proyectoLeagueOfLegends1\\src\\main\\java\\archivos\\items.csv.csv"),SEPARATOR,QUOTE);
+            miReader = new CSVReader(new FileReader("C:\\Users\\daw20\\Desktop\\proyectoLeagueOfLegends1\\src\\main\\java\\archivos\\items.csv.csv"),SEPARATOR,QUOTE);
             String [] linea = null;
             int contador = 0;
 

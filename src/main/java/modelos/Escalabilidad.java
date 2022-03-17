@@ -15,13 +15,13 @@ public class Escalabilidad {
         this.id = ++idSiguiente;
     }
 
-    public Escalabilidad(double incrementoDanioNivel, double incrementoDefensaNivel,
+    public Escalabilidad(int id,double incrementoDanioNivel, double incrementoDefensaNivel,
                          double incrementoSaludNivel, double incrementoManaNivel) {
         this.incrementoDanioNivel = incrementoDanioNivel;
         this.incrementoDefensaNivel = incrementoDefensaNivel;
         this.incrementoSaludNivel = incrementoSaludNivel;
         this.incrementoManaNivel = incrementoManaNivel;
-        this.id = ++idSiguiente;
+        this.id = id;
     }
 
     public int getId() {

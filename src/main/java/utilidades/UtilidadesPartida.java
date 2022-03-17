@@ -12,13 +12,13 @@ import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class UtilidadesPartida implements IUtilidadesPartida{
+public class UtilidadesPartida {
 
     public UtilidadesPartida() {
     }
 
-    @Override
-    public void inicializarPartida(Partida partida, List<Jugador> participantes, List<Personaje> personajesDisponibles) {
+
+    public static void inicializarPartida(Partida partida, List<Jugador> participantes, List<Personaje> personajesDisponibles) {
 
 
         Map<Jugador,Personaje> eleccionesdos = new HashMap<>();
@@ -73,8 +73,8 @@ public class UtilidadesPartida implements IUtilidadesPartida{
 
     }
 
-    @Override
-    public void finalizarPartida(Partida partida, Integer equipoVencedor) {
+
+    public static void finalizarPartida(Partida partida, Integer equipoVencedor) {
 
         partida.setFinPartida(LocalDateTime.now());
         int segundosInicio = partida.getInicioPartida().getSecond();

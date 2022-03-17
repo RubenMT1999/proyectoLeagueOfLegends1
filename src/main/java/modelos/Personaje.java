@@ -30,7 +30,7 @@ public class Personaje {
         this.id = ++ idSiguiente;
     }
 
-    public Personaje(String nombre, String descripcion, LocalDate fechaCreacion, int nivel, double vidaBase,
+    public Personaje(int id,String nombre, String descripcion, LocalDate fechaCreacion, int nivel, double vidaBase,
                      double manaBase, double defensaBase, double defensa, double ataqueBase, double ataque,
                      double vida, double mana, Region region, List<Habilidad> habilidades, List<Item> equipamiento,
                      Escalabilidad escalabilidad) {
@@ -50,7 +50,7 @@ public class Personaje {
         this.habilidades = habilidades;
         this.equipamiento = equipamiento;
         this.escalabilidad = escalabilidad;
-        this.id = ++idSiguiente;
+        this.id = id;
     }
 
     public int getId() {

@@ -17,14 +17,14 @@ public class Habilidad {
         this.id=++idSiguiente;
     }
 
-    public Habilidad(String nombre, double danioBase, double danio,
+    public Habilidad(int id,String nombre, double danioBase, double danio,
                      double costeMana, TipoHabilidad tipoHabilidad) {
         this.nombre = nombre;
         this.danioBase = danioBase;
         this.danio = danio;
         this.costeMana = costeMana;
         this.tipoHabilidad = tipoHabilidad;
-        this.id = ++idSiguiente;
+        this.id = id;
     }
 
 

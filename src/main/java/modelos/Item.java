@@ -17,14 +17,14 @@ public class Item {
         this.id = ++idSiguiente;
     }
 
-    public Item(String nombre, double aumentoDanio, double aumentoDefensa,
+    public Item(int id, String nombre, double aumentoDanio, double aumentoDefensa,
                 double aumentoSalud, double aumentoMana) {
         this.nombre = nombre;
         this.aumentoDanio = aumentoDanio;
         this.aumentoDefensa = aumentoDefensa;
         this.aumentoSalud = aumentoSalud;
         this.aumentoMana = aumentoMana;
-        this.id = ++idSiguiente;
+        this.id = id;
     }
 
 
